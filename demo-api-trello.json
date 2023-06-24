@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "86e567b7-bf5d-4edd-90d0-0c908cced6af",
+		"name": "Demo API testing with Postman for Trello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12489849"
+	},
+	"item": [
+		{
+			"name": "Create a new board",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							" // this function is to create random board name\r",
+							"pm.environment.set(\"boardNameDemo\", getRandomBoardNameDemo());\r",
+							"\r",
+							"function getRandomBoardNameDemo() {\r",
+							"    const boardNameDemo = \"DEMO TESTING BOARD \" +parseInt(Math.random() *1000);\r",
+							"    console.log(boardNameDemo);\r",
+							"    return boardNameDemo;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Board should be created\", function () {\r",
+							"     var boardName = pm.environment.get(\"boardNameDemo\")\r",
+							"    pm.expect(response.name).to.equal(boardName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Board should not be closed\", function () {\r",
+							"    pm.expect(response.closed).to.eql(false);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Board should be private\", function () {\r",
+							"    pm.expect(response.prefs.permissionLevel).to.eql(\"private\");\r",
+							"});\r",
+							"\r",
+							"pm.environment.set(\"boardIdDemo\", response.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/?name={{boardNameDemo}}&key={{key}}&token={{token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{boardNameDemo}}"
+						},
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the board name",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"boardNameDemo\", getRandomBoardNameDemo());\r",
+							" function getRandomBoardNameDemo() {\r",
+							"    const boardNameDemo = \"DEMO BOARD \" + parseInt(Math.random() *1000);\r",
+							"    console.log(boardNameDemo);\r",
+							"    return boardNameDemo;\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Board name should be updated\", function () {\r",
+							"     var boardName = pm.environment.get(\"boardNameDemo\")\r",
+							"    pm.expect(response.name).to.equal(boardName);\r",
+							"});\r",
+							"\r",
+							" \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{TrelloUrl}}/1/boards/{{boardIdDemo}}?key={{key}}&token={{token}}&name={{boardNameDemo}}",
+					"host": [
+						"{{TrelloUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{boardIdDemo}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "{{boardNameDemo}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View the board after updating",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the board name is correct\", function () {\r",
+							"     var boardName = pm.environment.get(\"boardNameDemo\")\r",
+							"    pm.expect(response.name).to.equal(boardName);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TrelloUrl}}/1/boards/{{boardIdDemo}}?key={{key}}&token={{token}}",
+					"host": [
+						"{{TrelloUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{boardIdDemo}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Board is deleted successfully\", function () {\r",
+							"   pm.response.to.have.status (200);\r",
+							"});\r",
+							"pm.environment.unset(\"boardNameDemo\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{TrelloUrl}}/1/boards/{{boardIdDemo}}?key={{key}}&token={{token}}",
+					"host": [
+						"{{TrelloUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{boardIdDemo}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check the board does not exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Board does not exit\", function () {\r",
+							"    pm.response.to.have.status (404);\r",
+							"})\r",
+							"\r",
+							"pm.environment.unset(\"boardIdDemo\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{TrelloUrl}}/1/boards/:id?key={{key}}&token={{token}}",
+					"host": [
+						"{{TrelloUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{boardIdDemo}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
