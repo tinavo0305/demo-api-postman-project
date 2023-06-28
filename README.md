@@ -1,8 +1,8 @@
 # api-postman
 ## Introduction
  <br /> This project is used to demonstate my expertise in REST API testing using Postman.
--Application to use: TRELLO app
-Test flow:
+<br /> Application to use: TRELLO app
+:- Test flow:
 1. 
 2. 
 3.
