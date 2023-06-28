@@ -2,12 +2,12 @@
 ## Introduction
 <br /> This project is used to demonstrate my expertise in REST API testing using Postman.
 
-<br /> Description: Use Postman to build an end-to-end API testing flow for Trello application
+<br /> **Description:** Use Postman to build an end-to-end API testing flow for Trello application
 <br />  - Write tests with JavaScript for each request to check that the request performed as expected.
 <br />  - Create a collection in Postman to run the test manually 
 <br />  - Using Newman to run the test in command-line interface 
 
-<br /> Test flow:
+<br /> *Test flow:*
 1. Use POST request to create a new board
 2. Use PUT request to update the name of the board
 3. Use GET request to view the board
