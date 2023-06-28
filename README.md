@@ -18,10 +18,10 @@ Please follow the [link](https://docs.google.com/spreadsheets/d/1WRHBKVxvaHdh-9N
 ## How to run the test:
 1. Install Postman app
 2. Download the file [demo-api-trello.json] (https://github.com/tinavo0305/demo-api-postman-project/blob/main/demo-api-trello.json) can be found in this project
-3. Import the json file to Postman app
+3. Import the json file to Postman app to create a collection
 4. Register a Trello account (if you don't have it yet), if you already have a Trello account, generate key and token from this [link] (https://trello.com/app-key)
 5. Add key and token as global variables in the Postman app
-6. Click *run* button to execute the  
+6. Inside the collection, click *run* button to execute the test manually or schedule a test run automatically
 ## Run the test with Newman:
 1...................
 2. HTML report with Newman
