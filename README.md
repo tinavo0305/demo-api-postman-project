@@ -15,16 +15,18 @@
 4. Use DELETE request to delete the board
 5. Use GET request to check the board does not exist
 Please follow the [link](https://docs.google.com/spreadsheets/d/1WRHBKVxvaHdh-9NkFGlye0-qPGQdK5_DmP-fpAb5FK4/edit?usp=sharing) for more details 
-## How to run the test:
+## How to run the test from Postman app with collection runner
 1. Install Postman app
 2. Download the file [demo-api-trello.json](https://github.com/tinavo0305/demo-api-postman-project/blob/main/demo-api-trello.json) can be found in this project
-3. Import the json file to Postman app to create a collection
+3. Import the json file to Postman app to create a collection having all the requests
 4. Register a Trello account (if you don't have it yet), if you already have a Trello account, generate key and token from this [link](https://trello.com/app-key)
 5. Add key and token as global variables in the Postman app
-6. Inside the collection, click *run* button to execute the test manually or schedule a test run automatically
-## Run the test with Newman:
-1...................
-2. HTML report with Newman
-From the Postman app with the collection runner
-From the Postman cloud with a scheduled monitor
-From the command line or as part of a CI/CD pipeline with Newman
+6. Inside the collection, click *Run* button to execute the test manually or schedule a test run automatically
+## Run the test from the command line with Newman
+1. Install Newman `npm install -g newman` (remember to install Node.js to use npm)
+2. Download the file [demo-api-trello.json](https://github.com/tinavo0305/demo-api-postman-project/blob/main/demo-api-trello.json) can be found in this project
+3. Run the collection using the command `newman run demo-api-trello.json --global-var key=[your Trello key] --global-var token= [your Trello token] --global-var TrelloUrl="https://api.trello.com"`
+## Create test report 
+1. 
+
+
