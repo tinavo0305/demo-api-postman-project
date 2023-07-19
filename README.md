@@ -10,6 +10,7 @@ This project is used to demonstrate my expertise in REST API testing using Postm
 - Create test report with htmlextra
 
 **Test flow:**
+This is an e2e test flow to create, update, view and delete a board in Trello application 
 1. Use POST request to create a new board
 2. Use PUT request to update the name of the board
 3. Use GET request to view the board
