@@ -16,7 +16,7 @@ This project is used to demonstrate my expertise in REST API testing using Postm
 4. Use DELETE request to delete the board
 5. Use GET request to check the board does not exist
 
-Please follow the [link](https://docs.google.com/spreadsheets/d/1WRHBKVxvaHdh-9NkFGlye0-qPGQdK5_DmP-fpAb5FK4/edit?usp=sharing) for detail test plan
+Please view this [link](https://docs.google.com/spreadsheets/d/1WRHBKVxvaHdh-9NkFGlye0-qPGQdK5_DmP-fpAb5FK4/edit?usp=sharing) for detailed test plan
 ## How to run the test from Postman app with collection runner
 1. Install Postman app
 2. Download the file [demo-api-trello.json](https://github.com/tinavo0305/demo-api-postman-project/blob/main/demo-api-trello.json) can be found in this project
