@@ -1,6 +1,6 @@
 # API testing with Postman
 ## Introduction
-This project is used to demonstrate my expertise in ** REST API** testing using **Postman**.
+This project is used to demonstrate my expertise in **REST API** testing using **Postman**.
 
 **Description:** 
 - Use Postman to build an end-to-end API testing flow for Trello application
