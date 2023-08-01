@@ -1,4 +1,4 @@
-# API testing with Postman
+# API testing with Postman  <img src="https://voyager.postman.com/logo/postman-logo-icon-orange.svg" title="Postman" alt="Postman" width="35" height="35"/>
 ## Introduction
 This project is used to demonstrate my expertise in **REST API** testing using **Postman**.
 
