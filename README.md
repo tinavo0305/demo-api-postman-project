@@ -33,8 +33,9 @@ Please view this [link](https://docs.google.com/spreadsheets/d/1WRHBKVxvaHdh-9Nk
 1. Install htmlextra reporter: `npm install -g newman-reporter-htmlextra`
 2. Run the collection using the command `newman run demo-api-trello.json --global-var key=[your Trello key] --global-var token= [your Trello token] --global-var TrelloUrl="https://api.trello.com" --reporters cli,htmlextra`
 3. The report will be generated in the *newman* folder which is the same location as postman collection
-<img width="557" alt="image" src="https://github.com/tinavo0305/demo-api-postman-project/assets/70987579/789b1925-9cbd-4a0d-9a97-0643983fcc38">
-<img width="553" alt="image" src="https://github.com/tinavo0305/demo-api-postman-project/assets/70987579/c97c85ce-8c86-4eb0-bc68-8e5e7b36fa25">
+   
+<img width="686" alt="image" src="https://github.com/tinavo0305/demo-api-postman-project/assets/70987579/0edc6d2d-7c0b-4d9c-9653-711da51c1ac3">
 
+<img width="680" alt="image" src="https://github.com/tinavo0305/demo-api-postman-project/assets/70987579/1872b472-48fe-4ef9-8b2b-0baa8b18dd6b">
 
 
