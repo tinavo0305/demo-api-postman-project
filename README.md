@@ -31,6 +31,8 @@ Please view this [link](https://docs.google.com/spreadsheets/d/1WRHBKVxvaHdh-9Nk
 1. Install Newman `npm install -g newman` (remember to install Node.js to use npm)
 2. Download the file [demo-api-trello.json](https://github.com/tinavo0305/demo-api-postman-project/blob/main/demo-api-trello.json) can be found in this project
 3. Run the collection using the command `newman run demo-api-trello.json --global-var key=[your Trello key] --global-var token= [your Trello token] --global-var TrelloUrl="https://api.trello.com"`
+ <img width="1128" alt="image" src="https://github.com/tinavo0305/demo-api-postman-project/assets/70987579/f6056292-2aad-4cb5-bc27-87a4f5e3aad3">
+  
 ## Create test report with htmlextra
 1. Install htmlextra reporter: `npm install -g newman-reporter-htmlextra`
 2. Run the collection using the command `newman run demo-api-trello.json --global-var key=[your Trello key] --global-var token= [your Trello token] --global-var TrelloUrl="https://api.trello.com" --reporters cli,htmlextra`
