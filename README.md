@@ -25,6 +25,8 @@ Please view this [link](https://docs.google.com/spreadsheets/d/1WRHBKVxvaHdh-9Nk
 4. Register a Trello account (if you don't have it yet), if you already have a Trello account, generate key and token from this [link](https://trello.com/app-key)
 5. Add key and token as global variables in the Postman app
 6. Inside the collection, click *Run* button to execute the test manually or schedule a test run automatically
+<img width="1127" alt="demo-Postman run" src="https://github.com/tinavo0305/demo-api-postman-project/assets/70987579/e735b4b8-3008-4ce9-9273-3b52fdf24e08">
+
 ## Run the test from the command line with Newman
 1. Install Newman `npm install -g newman` (remember to install Node.js to use npm)
 2. Download the file [demo-api-trello.json](https://github.com/tinavo0305/demo-api-postman-project/blob/main/demo-api-trello.json) can be found in this project
