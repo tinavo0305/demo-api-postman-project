@@ -5,6 +5,7 @@ This project is used to demonstrate my expertise in **REST API** testing using *
 **Description:** 
 - Use Postman to build an end-to-end API testing flow for Trello application
 - Write tests with **JavaScript** for each request to check that the request performed as expected.
+- Use variables to save the values and use them in requests
 - Create a collection in Postman to store all the requests and make the test run manually or automatically
 - Using Newman to run the test in the command-line interface (CLI)
 - Create **test report** with htmlextra
